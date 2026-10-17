@@ -970,10 +970,28 @@ a:focus-visible {
     }
 
     .project-card {
-        grid-template-columns: 25px 1fr 16px;
-        gap: 12px;
-        padding: 20px 12px;
-    }
+    grid-template-columns: 25px minmax(0, 1fr) 32px;
+    gap: 10px;
+    padding: 20px 12px;
+    width: 100%;
+    min-width: 0;
+}
+
+.project-card > div:nth-child(2) {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.project-arrow {
+    width: 32px;
+    height: 32px;
+    justify-self: end;
+}
+
+.project-arrow svg {
+    width: 18px;
+    height: 18px;
+}
 
     .project-card h4 {
         font-size: 1.05rem;
