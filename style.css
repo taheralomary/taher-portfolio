@@ -650,6 +650,20 @@ a:focus-visible {
     transform: translate(3px, -3px);
 }
 
+.button-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+
+.button-arrow svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
+
 /* TIMELINE */
 
 .timeline {
