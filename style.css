@@ -969,36 +969,61 @@ a:focus-visible {
         font-size: 0.87rem;
     }
 
+  
     .project-card {
-    grid-template-columns: 25px minmax(0, 1fr) 32px;
-    gap: 10px;
-    padding: 20px 12px;
-    width: 100%;
-    min-width: 0;
-}
+        display: grid;
+        grid-template-columns: 25px minmax(0, 1fr) 32px;
+        align-items: start;
+        gap: 10px;
+        padding: 20px 12px;
+        width: 100%;
+        min-width: 0;
+    }
 
-.project-card > div:nth-child(2) {
-    min-width: 0;
-    overflow-wrap: anywhere;
-}
+    .project-card > div:nth-child(2) {
+        min-width: 0;
+        overflow-wrap: break-word;
+    }
 
-.project-arrow {
-    width: 32px;
-    height: 32px;
-    justify-self: end;
-}
-
-.project-arrow svg {
-    width: 18px;
-    height: 18px;
-}
+    .project-card .project-type {
+        font-size: 0.72rem;
+        line-height: 1.7;
+        overflow-wrap: anywhere;
+    }
 
     .project-card h4 {
         font-size: 1.05rem;
+        line-height: 1.4;
     }
 
     .project-card p:not(.project-type) {
         font-size: 0.8rem;
+        line-height: 1.8;
+    }
+
+    .project-card .project-tags {
+        font-size: 0.68rem;
+        line-height: 1.8;
+        overflow-wrap: anywhere;
+        margin-top: 12px;
+    }
+
+    .project-card .project-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        justify-self: end;
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        position: relative;
+        transform: none;
+    }
+
+    .project-card .project-arrow svg {
+        display: block;
+        width: 18px;
+        height: 18px;
     }
 
     .timeline-item {
@@ -2163,3 +2188,13 @@ body::after {
 .primary-button .button-arrow svg path {
     stroke: currentColor;
 }
+
+
+
+    @media (max-width: 650px) {
+        .project-card:hover .project-arrow,
+        .project-card:focus-visible .project-arrow,
+        .project-card:active .project-arrow {
+            transform: none;
+        }
+    }
